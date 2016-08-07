@@ -60,6 +60,7 @@ languages.
 syntax. These languages usually require more responsibility on the programmer to watch memory allocation, bit shifting, 
 and other low-level procedures that Python handles for you. Take this Assembly program that also only prints out `Hello 
 World` and see how much more complicated it is.
+
 ```assembly
 section     .text
 global      _start                              ;must be declared for linker (ld)
