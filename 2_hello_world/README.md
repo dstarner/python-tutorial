@@ -94,6 +94,7 @@ few sections.
 ## Try it Yourself
 *Note: Before we go much farther, if I show a code block and you see "# Some text here" then that is a comment and 
 does nothing to the program other than give more information to the reader.*
+
 In this directory, run `python hello_world.py` and see what happens. It should print out "Hello World" to wherever 
 you ran that command. This is the most basic program we can write; it takes a **String** - any group of letters within 
 quotation marks - and `prints` it out. Either modify that or add a new line the file trying to print out a 

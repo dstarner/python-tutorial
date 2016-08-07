@@ -20,7 +20,7 @@ The code creates a variable called `someNumber` and assigns it the integer value
 Python finds where we declared it and prints out the value we assigned to it. Declaring/Instantiating a variable in 
 Python follows this construct:
 ```
-my_variable_name = integer/long | string | boolean | float | Object | list | expression | dictionary  # Don't worry about dictionaries yet.
+my_variable_name = integer/long | string | boolean/expression | float | Object | list | dictionary  # Don't worry about dictionaries yet.
 ```
 
 As you can see, a variable can be set to many different things. The name of the variable - on the left side - can be 
@@ -57,6 +57,74 @@ example: `"He said to me, \"Woah\""`. If you don't want to escape it, then you c
 ```python
 print 'C:\\nowhere'  # Will be escaped to print 'C:\nowhere'
 print r'C:\\nowhere' # Will print as is. 'C:\\nowhere'
+```
+
+Strings can be added together like so:
+
+```python
+greeting = "Hello, " + "Dan, " + " you look good today!"
+print greeting
+# End of file, output below
+Hello, Dan, you look good today!
+```
+
+To turn a current variable into its string representation, wrap the variable in `str(value)`. If you gave it something 
+like `str(5)` it will return `"5"`. If you want to print a string and number together, you must wrap the number in the 
+`str()` function.
+
+
+#### Boolean Expressions and Logic Operators
+A Boolean value is either True or False. It is named after the British mathematician, George Boole, who first 
+formulated Boolean algebra — some rules for reasoning about and combining these values. This is the basis of all modern 
+computer logic. In Python, boolean values can be either `True` or `False`. 
+
+```python
+# Two different Booleans
+am_i_cool = True
+
+can_operate = False
+```
+
+An expression is a line of code that be evaluated to a Boolean. There are six boolean expression operators you should know:
+
+```python
+x == y               # Produce True if ... x is equal to y
+x != y               # ... x is not equal to y
+x > y                # ... x is greater than y
+x < y                # ... x is less than y
+x >= y               # ... x is greater than or equal to y
+x <= y               # ... x is less than or equal to y
+
+# Some examples of boolean expressions
+age = 18  # Int variable
+old_enough_to_get_driving_licence = age >= 16  # True
+print(old_enough_to_get_driving_licence)
+
+# Another example
+number = 7
+equal_to = (6 == number)  # False
+```
+
+*Boolean expressions get evaluated from most inward parenthesis to outward.*
+
+##### Logic Operators
+Coupled with Boolean expressions, Logic operators are very important to Computer Science. The three Logic Operators are 
+`and`, `or`, and `not`. They are used to group multiple boolean expressions to form one boolean evaluation. They are 
+good with telling if a number is in a range or not amongst other things.
+
+```python
+old_enough_to_drive = True
+clean_record = False
+
+# If they are old enough and have a clean record
+low_insurance = old_enough_to_drive and clean_record
+
+# If a drive is not old enough or has a bad record
+bad_driver = not old_enough_to_drive or not clean_record
+
+# Junior driver if their age is 16 or 17.
+age = 16
+junior_driver = age >=16 and age < 18
 ```
 
 
