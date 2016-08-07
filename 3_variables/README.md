@@ -89,11 +89,11 @@ An expression is a line of code that be evaluated to a Boolean. There are six bo
 
 ```python
 x == y               # Produce True if ... x is equal to y
-x != y               # ... x is not equal to y
-x > y                # ... x is greater than y
-x < y                # ... x is less than y
-x >= y               # ... x is greater than or equal to y
-x <= y               # ... x is less than or equal to y
+x != y               #                 ... x is not equal to y
+x > y                #                 ... x is greater than y
+x < y                #                 ... x is less than y
+x >= y               #                 ... x is greater than or equal to y
+x <= y               #                 ... x is less than or equal to y
 
 # Some examples of boolean expressions
 age = 18  # Int variable
