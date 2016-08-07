@@ -60,6 +60,26 @@ languages.
 syntax. These languages usually require more responsibility on the programmer to watch memory allocation, bit shifting, 
 and other low-level procedures that Python handles for you. Take this Assembly program that also only prints out `Hello 
 World` and see how much more complicated it is.
+```assembly
+section     .text
+global      _start                              ;must be declared for linker (ld)
+
+_start:                                         ;tell linker entry point
+
+    mov     edx,len                             ;message length
+    mov     ecx,msg                             ;message to write
+    mov     ebx,1                               ;file descriptor (stdout)
+    mov     eax,4                               ;system call number (sys_write)
+    int     0x80                                ;call kernel
+
+    mov     eax,1                               ;system call number (sys_exit)
+    int     0x80                                ;call kernel
+
+section     .data
+
+msg     db  'Hello, world!',0xa                 ;our dear string
+len     equ $ - msg                             ;length of our dear string
+```
 
 
 #### Dynamic Typing
@@ -71,7 +91,7 @@ few sections.
 
 
 ## Try it Yourself
-*Note: Before we go much farther, if I show a code block and you see **# Some text here** then that is a comment and 
+*Note: Before we go much farther, if I show a code block and you see "# Some text here" then that is a comment and 
 does nothing to the program other than give more information to the reader.*
 In this directory, run `python hello_world.py` and see what happens. It should print out "Hello World" to wherever 
 you ran that command. This is the most basic program we can write; it takes a **String** - any group of letters within 
