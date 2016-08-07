@@ -30,5 +30,5 @@ after that than on a Unix machine.
 
 
 
-[1] www.ubacm.org
-[1] www.ubacm.org
+[1]: http://ubacm.org/blog/post/61VO1NOUFGW4E8WM
+[2]: http://ubacm.org/blog/post/0EVPLCWH190YJ8TH
