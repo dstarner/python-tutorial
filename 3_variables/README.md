@@ -128,3 +128,75 @@ junior_driver = age >=16 and age < 18
 ```
 
 
+#### Floats
+Floats represent real numbers and are written with a decimal point dividing the integer and fractional parts. 
+Floats usually represent decimal numbers, but they can also represent numbers in scientific notation. 
+
+**WATCH OUT: Occasionally floating point errors occur with arithmetic.**
+
+```python
+# Float examples
+example1 = 6/8
+example2 = 7/3
+example3 = 2.323
+example4 = example1 / example3
+```
+
+
+#### Objects
+These will be covered at a later time.
+
+
+#### Lists
+The most basic data structure in Python is the **list**. Each element of a sequence is assigned a number - its position 
+or index. The first index is zero, the second index is one, and so forth. The list is a most versatile datatype 
+available in Python which can be written as a list of comma-separated values (items) between square brackets. Important 
+thing about a list is that items in a list need not be of the same type. To create a list, follow the syntax below.
+To access values in lists, use the square brackets for slicing along with the index or indices to obtain value 
+available at that index.
+
+```python
+       # Index: 0  1  2  3  4
+myNumberList = [1, 4, 6, 8, 10]
+myNumber = myNumberList[0] # Get the first number; will be 1.
+
+myStringList = ["Hello", "World"]
+myString = myStringList[1]  # Equates to "World"
+
+myMixedList = [1, "Hi", 15, True]
+myMixed = myMixedList[3]  # Equates to True
+```
+
+To update the value at an index, you can access the value with the square brackets, and then just put that on the left 
+side of a declaration statement.
+
+```python
+list = ['physics', 'chemistry', 1997, 2000];
+
+print "Value available at index 2 : "
+print list[2]
+list[2] = 2001;
+print "New value available at index 2 : "
+print list[2]
+```
+
+To add to an existing list, use `append(some_value)`
+
+```
+list = [1, 10, 15]
+list.append(5)
+print list  # Will print "[1, 10, 15, 5]"
+```
+
+To add to an existing list, use `append(some_value)`
+
+```
+list = [1, 10, 15]
+list.remove(10)
+print list  # Will print "[1, 15]"
+```
+
+
+#### Dictionary
+Will be discussed at a later point
+
