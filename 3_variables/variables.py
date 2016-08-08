@@ -15,10 +15,18 @@ myBoolean =
 # Set this to a List; the items in it can be of any type
 myList =
 
+# Set this to a boolean expression
+myBooleanExpression =
+
+print("Old number: " + str(myNumber))
+# Reassign myNumber to a new value
+myNumber =
 
 # Print out information about all the variables
-print str(myNumber) + " plus 5 is " + str(5 + myNumber)
-print myString
-print "This is true" if myBoolean else "This is false"
+print("New number: " + str(myNumber))
+print(str(myNumber) + " plus 5 is " + str(5 + myNumber))
+print(myString)
+print("myBoolean is true" if myBoolean else "myBoolean is false")
+print("The expression is true" if myBooleanExpression else "The expression is false")
 for value in myList:
-    print value
+    print(value)

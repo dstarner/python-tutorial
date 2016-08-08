@@ -52,7 +52,7 @@ professional projects.
 * A high level programming language means that the code is simpler to read/develop, but the interpreter/compiler is 
 much more complicated. This is good, because the code will be easier to read/write for new coders. Take the example
 ```python
-print "Hello World"
+print("Hello World")
 ```
 Its not too difficult to infere that this will print out `Hello World`. That is the beauty of high level programming 
 languages.
@@ -101,7 +101,7 @@ quotation marks - and `prints` it out. Either modify that or add a new line the 
 greeting with your name! Mine would be...
 
 ```python
-print "Hello World"
+print("Hello World")
 # My new line below
-print "Hello, Dan!"
+print("Hello, Dan!")
 ```

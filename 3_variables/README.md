@@ -107,10 +107,19 @@ equal_to = (6 == number)  # False
 
 *Boolean expressions get evaluated from most inward parenthesis to outward.*
 
+* Go into the `3_variables` directory in this repository and run the command below to test your boolean expression 
+knowledge!
+```bash
+cd 3_variables/
+# Once inside of the directory
+python expressions.py
+```
+
 ##### Logic Operators
 Coupled with Boolean expressions, Logic operators are very important to Computer Science. The three Logic Operators are 
 `and`, `or`, and `not`. They are used to group multiple boolean expressions to form one boolean evaluation. They are 
-good with telling if a number is in a range or not amongst other things.
+good with telling if a number is in a range or not amongst other things. Another useful operator is using `is` to denote 
+equality.
 
 ```python
 old_enough_to_drive = True
@@ -196,7 +205,10 @@ list.remove(10)
 print list  # Will print "[1, 15]"
 ```
 
+* You can mess around and assign different variables in `variables.py` and see how they change!
 
 #### Dictionary
 Will be discussed at a later point
+
+
 
