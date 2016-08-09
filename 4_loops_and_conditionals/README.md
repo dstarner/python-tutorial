@@ -70,13 +70,88 @@ chosen_word = random.choice(word_list)
 We now have a random word from our list!
 
 In order to set the number of incorrect guesses and the total guesses before losing the game, we need two integer values.
-We will compare the number of wrong guesses to the total guesses before losing to make sure the former is less. 
+We will compare the number of wrong guesses to the total guesses before losing to make sure the former is less. We also 
+need a list of characters they have guessed that will start as an empty list.
 
 ```python
 # ...Previous code from above...
 
 incorrect_guesses = 0  # Start this at zero and +1 each wrong guess
 total_incorrect_allowed = 6  # After 6 incorrect guesses, you lose
+
+guessed_letters = []  # Will hold the previously guessed characters
 ```
+
+Sweet, so now we have most of the stuff set up to play the game, but we aren't actually doing anything with this stuff! 
+Time to take a short interlude and talk about **loops** and **conditionals**.
+
+### Loops
+>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the 
+>second, and so on. There may be a situation when you need to execute a block of code several number of times.
+>Programming languages provide various control structures that allow for more complicated execution paths.
+>A loop statement allows us to execute a statement or group of statements multiple times.
+> - TutorialsPoint
+
+The above summarizes loops. They let you perform the same block of code over and over again. The types of loops are 
+below. Note that the block of code you want run should be indented with 4 spaces from the indentation of the loop 
+statement.
+
+#### While Loops
+A `while` loop repeats a statement or group of statements while a given condition is TRUE. It tests the condition 
+before executing the loop body. **BE CAREFUL OF INFINITE LOOPS THAT NEVER EXIT**, although sometimes they can be good.
+
+```python
+# Basic abstract usage
+while BOOLEAN_EXPRESSION:
+    code_block
+    code_block
+code_outside_of_loop
+
+# This increments and prints out a counter
+count = 0
+while count <= 10:
+    print(count)
+    count += 1
+# Will print 1 -> 10 on different lines
+
+
+# This will print "Haha" forever
+# Infinite loops are really only useful for game loops
+while True:
+    print("Haha")
+
+```
+
+#### For Loops
+A `for` loop executes a sequence of statements multiple times and abbreviates the code that manages the loop variable. A 
+for loop will take a list and go through each index in it, or it will go through each character in a string, or iterate 
+through some sequence it is given.
+
+```python
+
+for VARIABLE in SEQUENCE | STRING | ITERATOR:
+    code_block
+    code_block
+code_outside_of_loop
+
+# Will run 3 times
+# Will print:
+# We're on time 0
+# We're on time 1
+# We're on time 2
+for x in range(0, 3):
+    print "We're on time %d" % (x)
+    
+    
+# Iterate through a list
+names = ["Dan", "Joe", "Jared"]
+
+for name in names:
+    # Each index will be the 'name' variable for its runthrough of the codeblock
+    # The '%s' will get replaced by the variable after the '%' outside of the string.
+    print("Hello, %s" % name)
+```
+
+
     
 
