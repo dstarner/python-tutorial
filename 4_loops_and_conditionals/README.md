@@ -150,7 +150,114 @@ for name in names:
     # Each index will be the 'name' variable for its runthrough of the codeblock
     # The '%s' will get replaced by the variable after the '%' outside of the string.
     print("Hello, %s" % name)
+    
+# The code above will print everyone's name on a separate line
 ```
+
+### Back to the Game
+So back to the game; now that we know loops, we can start a game loop, because the game of Hangman is turn-based. 
+Because we aren't sure how many times we will have to loop, let's use a `while` loop. It should keep running until we've
+ either won the game or used enough guesses. Our boolean expression to check for the loop will be if 
+`incorrect_guesses < total_incorrect_allowed`. Adding this to our current code we get:
+
+```python
+import random
+
+# Pick a random word from a list
+word_list = ["pizza", "tomato", "pepper", "gingersnap", "oreos"]
+chosen_word = random.choice(word_list)
+
+# Keep track of guesses
+incorrect_guesses = 0  # Start this at zero and +1 each wrong guess
+total_incorrect_allowed = 6  # After 6 incorrect guesses, you lose
+guessed_letters = []  # Will hold the previously guessed characters
+
+while incorrect_guesses < total_incorrect_allowed:
+   print()  # Give a blank line to separate the turns easily.
+   # Running this will be an infinite loop and will never stop.
+```
+
+Now we will go about printing out the word and our info in a good way. We will iterate through each letter in the 
+`chosen_word` and if it is in `guessed_letters` then we will print it out, and if its not in the list, then we will 
+print out a `_`. We will introduce a new parameter - you'll learn about parameters in the next section - to the `print` 
+statement.
+
+```python
+
+# Old code ....
+
+while incorrect_guesses < total_incorrect_allowed:
+   print()  # Give a blank line to separate the turns easily.
+   
+   # New code below
+   for letter in chosen_word:
+        if letter.upper() in guessed_letters:
+            print(letter.upper(), end=" ")
+        else:
+            print("_ ", end="")
+            
+   print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
+   
+```
+
+So the **for loop** is going through each letter of the `chosen_word`, and then it checks if the letter is in `guessed_letters`. 
+The syntax to check if an element is in a list is very simple - `ELEMENT in LIST`. We use the `.upper()` to make the letter 
+uppercase because in programming, *l* does not equal *L*, so its good to stick to either all uppercase or all lowercase. 
+If its in the list, then we print the letter, and the `end=" "` means to print a space after it, instead of moving to 
+the next line. If the letter is not in `guessed_letters` then we do the same, but print out an underscore (_) instead. 
+The print line below the for loop prints out the number of guesses you have left. The `\n\n` at the beginning indicates 
+two **newline** characters, which together end the line below and print a blank line, giving the game some clean 
+formatting to it.
+
+While we are in this loop, lets figure out if we've won or not. Obviously if we have to print out an underscore, then we 
+haven't won yet. Let's create a boolean `has_won` and set it to `True` at the start of every loop. If we have to do the 
+`else` of the conditional, then we set it to `False`. Edit the loop to look like this:
+
+```python
+has_won = True
+for letter in chosen_word:
+        if letter.upper() in guessed_letters:
+            print(letter.upper(), end=" ")
+        else:
+            has_won = False
+            print("_ ", end="")
+```
+
+If you have won, then we should check the `has_won` variable, print something nice, and quit the game. Let's add that 
+below our print statement that we had after the for loop. The whole program should look like this:
+
+```python
+import random
+
+# Pick a random word from a list
+word_list = ["pizza", "tomato", "pepper", "gingersnap", "oreos"]
+chosen_word = random.choice(word_list)
+
+# Keep track of guesses
+incorrect_guesses = 0  # Start this at zero and +1 each wrong guess
+total_incorrect_allowed = 6  # After 6 incorrect guesses, you lose
+guessed_letters = []  # Will hold the previously guessed characters
+
+while incorrect_guesses < total_incorrect_allowed:
+   print()  # Give a blank line to separate the turns easily.
+   has_won = True
+   for letter in chosen_word:
+       if letter.upper() in guessed_letters:
+           print(letter.upper(), end=" ")
+       else:
+           has_won = False
+           print("_ ", end="")
+           
+   print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
+   
+   # new code
+   # If they won, print something nice and exit out.
+   if has_win:
+        print("You have won!!")
+        exit()
+```
+
+
 
 
     
