@@ -155,6 +155,70 @@ for name in names:
 # The code above will print everyone's name on a separate line
 ```
 
+## Conditionals
+>A **conditional** is when a program has more than one choice of actions depending on a variable's value. Think of a traffic 
+>light. When it is green, we continue our drive. When we see the light turn yellow, we reduce our speed, and when it is 
+>red, we stop. These are logical decisions that depend on the value of the traffic light. Luckily, Python has **conditionals** 
+>statement to help us when our application needs to make such decision for the user.
+> - Wikibooks
+Conditionals are used when the actions a program takes can vary based on the value of a variable.
+
+### If/Else
+Take the codeblock below, when a boolean expression is passed to the `if` statement:
+```python
+n = random.randInt(-10, 11)  # Pick a random number between -10 and 10.
+if n < 0:
+    print ("The absolute value of",n,"is",-n)
+else:
+    print ("The absolute value of",n,"is",n)
+```
+and that has the output of 
+```
+Integer? -8
+The absolute value of -8 is 8
+
+Integer? 1
+The absolute value of 1 is 1
+```
+So what is going on? Python reads the line "if n < 0:". If n is less than zero Python runs the line 
+`print("The absolute value of",n,"is",-n)`. Otherwise python runs the line `print("The absolute value of",n,"is",n)`.
+
+More formally, Python looks at whether the expression `n < 0` is **True** or **False**. An if statement is followed by 
+an indented block of statements that are run when the expression is `True`. After the if statement is an optional 
+**else** statement and another indented block of statements. This 2nd block of statements is run if the expression is 
+`False`.
+
+*Note that an `if` statement does not always need an `else` associated with it.*
+
+### Elif
+Another feature of the if command is the `elif` statement. It stands for "else if," which means that if the original if 
+statement is false and the elif statement is true, execute the block of code following the `elif` statement. Here's an example:
+```python
+a = 0
+while a < 10:
+    a = a + 1
+    if a > 5:
+        print (a,">",5)
+    elif a <= 7:
+        print (a,"<=",7)
+    else:
+        print ("Neither test was true")
+```
+With the output - Notice how the elif a <= 7 is only tested when the if statement fails to be true. elif allows 
+multiple tests to be done in a single if statement:
+```
+1 <= 7
+2 <= 7
+3 <= 7
+4 <= 7
+5 <= 7
+6 > 5
+7 > 5
+8 > 5
+9 > 5
+10 > 5
+```
+
 ## Back to the Game
 So back to the game; now that we know loops, we can start a game loop, because the game of Hangman is turn-based. 
 Because we aren't sure how many times we will have to loop, let's use a `while` loop. It should keep running until we've
