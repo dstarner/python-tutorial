@@ -329,7 +329,52 @@ always checking with Upper case letters to stay consistent.
 
 ## You Have Hangman!
 Congrats, you just programmed your first game!! Pretty sweet right? You can play that, or play with `hangman_solution.py` which
-has close to 11,000 possible word choices!
+has close to 11,000 possible word choices! The final code is below:
+
+```python
+import random
+
+# Pick a random word from a list
+word_list = ["pizza", "tomato", "pepper", "gingersnap", "oreos"]
+chosen_word = random.choice(word_list)
+
+# Keep track of guesses
+incorrect_guesses = 0  # Start this at zero and +1 each wrong guess
+total_incorrect_allowed = 6  # After 6 incorrect guesses, you lose
+guessed_letters = []  # Will hold the previously guessed characters
+
+while incorrect_guesses < total_incorrect_allowed:
+   print()  # Give a blank line to separate the turns easily.
+   
+   has_won = True
+   for letter in chosen_word:
+       if letter.upper() in guessed_letters:
+           print(letter.upper(), end=" ")
+       else:
+           has_won = False
+           print("_ ", end="")
+           
+   print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
+   
+   # If they won, print something nice and exit out.
+   if has_win:
+        print("You have won!!")
+        exit()
+        
+   letter = input("Please enter a single letter: ").replace(" ", "")
+    
+    if len(letter) > 1 or letter.upper() in guessed_letters:
+        print("Bad input!")
+    else:
+        if letter.upper() in chosen_word.upper():
+            print("%s is in the word!" % letter.upper())
+        else:
+            print("%s is not in the word!" % letter.upper())
+            incorrect_guesses += 1
+        guessed_letters.append(letter.upper())
+
+print("You lost! Your man is dead! The word was %s." % chosen_word)
+```
 
 In the next lesson we will learn about functions to shorten and clean up code blocks!
     
