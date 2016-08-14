@@ -34,7 +34,8 @@ Gameplay Instructions:
 So before we can begin playing the game, we have to set up the all the variables using the types of variables from the 
 previous lesson. Lets start with the unknown word. To pick from a word, we will need a **list** of words...Hm, see any 
 words stick out in that last sentence that we should thing about?? OH YEA! A list of strings would be cool! Lets start 
-there and move on... *Note that you can code this in `4_loops_and_conditionals/hangman.py`*
+there and move on... *Note that you can code this in `4_loops_and_conditionals/hangman.py`. To run a Python file, just
+run `python <FILE LOCATION/NAME.py>` so this would be `python 4_loops_and_conditionals/hangman.py`.*
 
 ```python
 # Create a list of strings for possible words to guess
@@ -154,7 +155,7 @@ for name in names:
 # The code above will print everyone's name on a separate line
 ```
 
-### Back to the Game
+## Back to the Game
 So back to the game; now that we know loops, we can start a game loop, because the game of Hangman is turn-based. 
 Because we aren't sure how many times we will have to loop, let's use a `while` loop. It should keep running until we've
  either won the game or used enough guesses. Our boolean expression to check for the loop will be if 
@@ -257,8 +258,79 @@ while incorrect_guesses < total_incorrect_allowed:
         exit()
 ```
 
+Now the player will win if they successfully guessed all the letters, or lose if they use all their incorrect attempts. 
+When the player loses, the **while** loop will break, so we should print something at the very end telling them they 
+lost.
+
+```python
+    if has_win:
+        print("You have won!!")
+        exit()
+        
+# New code -- Note that the line is NOT indented
+print("You lost! Your man is dead! The word was %s." % chosen_word)
+```
+
+Now we give the user the correct word and tell them they lost if they use up all their guesses.
+
+### User Input
+So now that we have all of the computer's end finished, its time to break the infinite loop and have the user give 
+some input to play the game. In python, to collect user input, use the function `input(str:prompt)`. You pass it the 
+prompt that will be shown to the user, and you save the returned value to a variable. Under the `if has_win` conditional 
+- but not inside of it - place this line; `.replace()` will replace any occurrences of the first string with the second, 
+in this example we are removing spaces:
+
+```python
+    # ...Old code...
+    if has_win:
+        print("You have won!!")
+        exit()
+    
+    # New line -- Collect user input 
+    letter = input("Please enter a single letter: ").replace(" ", "")
+        
+        
+print("You lost! Your man is dead! The word was %s." % chosen_word)
+```
+
+Now that we have a letter, we can do the appropriate thing with it. Whenever you get user input, ALWAYS TEST IT FOR 
+BAD INPUT. **Lesson #1, Never trust the user!** Check to make sure that their input is correct. For this example, we 
+will have to make sure that the length of the input is no longer than 1, and that the choice is not already in `guessed_letters`.
+I am going to throw a lot of code out there, but try to understand it on your own first before looking below it for 
+explanations.
+
+```python
+    
+    letter = input("Please enter a single letter: ").replace(" ", "")
+    
+    # New code block
+    if len(letter) > 1 or letter.upper() in guessed_letters:
+        print("Bad input!")
+    else:
+        if letter.upper() in chosen_word.upper():
+            print("%s is in the word!" % letter.upper())
+        else:
+            print("%s is not in the word!" % letter.upper())
+            incorrect_guesses += 1
+        guessed_letters.append(letter.upper())
+        
+    # ...Old Code...
+```
+
+In the first conditional, we are making sure that the letter variable is no longer than 1 with python's `len(variable)` 
+function. `len()` can take any object or sequence, so its always a useful function to double check sizes. If the input 
+fails - that means passes the first condition with `True` - then we print out *Bad Input*. If its a good input and goes 
+to the `else` block, then it faces another conditional to see if the letter is in the word. If it is, then we tell the 
+user that it is in the word, and if it isn't, then we increment to the incorrect_guesses by 1. Note that `incorrect_guesses += 1` 
+is the same as `incorrect_guesses = incorrect_guesses + 1` but its an easier way to do it - same works for `*=`, `-=`, 
+and `/=`. Either way, if its in the word or not, we add the letter to `guessed_letters` at the end. Note that we are 
+always checking with Upper case letters to stay consistent.
 
 
+## You Have Hangman!
+Congrats, you just programmed your first game!! Pretty sweet right? You can play that, or play with `hangman_solution.py` which
+has close to 11,000 possible word choices!
 
+In the next lesson we will learn about functions to shorten and clean up code blocks!
     
 
