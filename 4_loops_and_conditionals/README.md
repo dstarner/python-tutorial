@@ -195,7 +195,7 @@ while incorrect_guesses < total_incorrect_allowed:
         if letter.upper() in guessed_letters:
             print(letter.upper(), end=" ")
         else:
-            print("_ ", end="")
+            print("_ ", end=" ")
             
    print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
    
@@ -247,7 +247,7 @@ while incorrect_guesses < total_incorrect_allowed:
            print(letter.upper(), end=" ")
        else:
            has_won = False
-           print("_ ", end="")
+           print("_ ", end=" ")
            
    print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
    
@@ -352,7 +352,7 @@ while incorrect_guesses < total_incorrect_allowed:
            print(letter.upper(), end=" ")
        else:
            has_won = False
-           print("_ ", end="")
+           print("_ ", end=" ")
            
    print("\n\nYou have %s bad guesses left.\n" % (total_incorrect_allowed - incorrect_guesses))
    
