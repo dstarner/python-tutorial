@@ -66,4 +66,42 @@ say you have to write out tons of words with the letters on different lines - wh
 you can just keep calling `print_oddly()` instead of writing out that `for loop` over and over, and over again...
  
 ## Files
-If you want to read/write from a file, it is very easy.
+If you want to read/write from a file, it is very easy. Before you can read or write a file, you have to open it using 
+Python's built-in open() function. This function creates a file object, which would be utilized to call other support 
+methods associated with it. The best way to open a file is shown below.
+
+```python
+# Open the file and save it to 'my_file'
+with open("myfile.txt", "r+") as my_file:
+    # Print out the first line of the file
+    print(my_file.readline())
+    
+    some_code_block_affecting_file()
+
+# The file is closed outside of the 'with' loop to prevent any issues.
+
+some_other_code()
+```
+
+You'll notice that in the `open()` function has two parameters inside of it, the **location/filename** and the **mode**. 
+The location and filename should be pretty self descriptive, but the **mode** may not be. The **mode** tells Python how 
+to open the file; Should it just be able to read the file? Should it append to the file, or just overwrite what's in it?
+The most common modes are listed below for future reference.
+
+| Mode        | Description          |
+| ----------- |:-------------:       |
+| r  | Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode. |
+| r+ | Opens a file for both reading and writing. The file pointer placed at the beginning of the file. |
+| w+ | Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing. |
+| a+ | Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing. |
+
+Some of the most common function calls on your file object are listed below:
+
+| Mode                    | Description          |
+| ----------------------- |:-------------:       |
+| `.write("some string")`   | This will write the string passed to it wherever the pointer is. You can pass special characters like newlines '\n' if you would like |
+| `.readline()`           | This will read the next line of the file and return it as a string. |
+| `.readlines()`            | This will read all of the lines of the file and put them into an array. Useful in loops. |
+
+In the directory that this README is located, run `python file_example.py` to try reading and writing out of a file.
+
