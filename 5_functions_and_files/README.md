@@ -97,8 +97,8 @@ The most common modes are listed below for future reference.
 
 Some of the most common function calls on your file object are listed below:
 
-| Function Name/Call                        | Description          |
-| --------------------------- |:-------------:       |
+| Function Name/Call          | Description    |
+| --------------------------- |:---------:       |
 | `.write("str")`     | This will write the string passed to it wherever the pointer is. You can pass special characters like newlines '\n' if you would like |
 | `.readline()`               | This will read the next line of the file and return it as a string. |
 | `.readlines()`              | This will read all of the lines of the file and put them into an array. Useful in loops. |
