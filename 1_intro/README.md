@@ -34,7 +34,7 @@ In grade-school and high school, you most likely learned about **functions** in 
 picture of a Input/Output machine with one kid at one end of the machine holding a `5` and another at the other end 
 holding some new number `8` and you were asked to figure out what the function was. *Spoiler* but in this case its 
 `x + 3`. In Computer Science, the Input/Output machine can represent the algorithm, and the `x + 3` is called an 
-expression - something that equates to a certain exact value, either a number, True/False, a word, or something of the 
+**expression** - something that equates to a certain exact value, either a number, True/False, a word, or something of the 
 sorts. Algorithms are like the machine because they take one or more expressions, and they perform calculations on data 
 input into them and spurt out new data after all the expressions have been evaluated. Although they might seem like 
 magic, this is how all computers are designed to work. When you hit the power button on your Macbook, different 
