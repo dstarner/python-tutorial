@@ -1,5 +1,5 @@
 def file_write(file_name):
-    with open(file_name, "w") as file:
+    with open(file_name, "w+") as file:
 
         print("Writing 'Hello World' to file...")
 
@@ -11,7 +11,7 @@ def file_write(file_name):
 
 def file_read(file_name):
 
-    with open(file_name, "r") as file:
+    with open(file_name, "r+") as file:
 
         print("Reading to file...")
 
