@@ -27,6 +27,56 @@ view - before you can create Objects using it. The generic way to declare a clas
 new term 'kwargs' which will be explained after.*
 
 ```python
+class ClassName(object):  # Tell Python you want a class and give it a name
+    
+    constant_1 = "value_1"  # Declare any attributes you want all objects of that type to have.
+    constant_2 = "value_2"
+    
+    def __init__(self, attribute_1, **kwargs):  # The constructor that is called when an object is created.
+        self.attribute_1 = attribute_1          # Set the object's attribute to the value that was passed.
+        
+        for k in kwargs.keys():                 # Any extra attributes that the user might want to add
+            self.__setattr__(k, kwargs[k])      # get saved. 
+```
+
+`**kwargs` is just a dictionary. A dictionary has `key`s and `value`s. It is like a list but instead of using indices 
+to find things, you use actual strings or objects to map from one thing to another. An example of a dictionary is below:
+
+```python
+stuff = {'name': 'Zed', 'age': 39, 'height': 6 * 12 + 2}
+print stuff['name']
+> Zed
+print stuff['age']
+> 39
+print stuff['height']
+> 74
+stuff['city'] = "San Francisco"
+print stuff['city']
+> San Francisco
+```
+
+You will see that instead of just numbers we're using strings to say what we want from the stuff dictionary. We can also 
+put new things into the dictionary with strings. It doesn't have to be strings though. We can also do this:
+
+```python
+stuff[1] = "Wow"
+stuff[2] = "Neato"
+print stuff[1]
+> Wow
+print stuff[2]
+> Neato
+print(stuff)
+> {'city': 'San Francisco', 2: 'Neato', 'name': 'Zed', 1: 'Wow', 'age': 39, 'height': 74}
+
+```
+
+`**kwargs` is a dictionary but you don't know the length or the key names. It just lets you set more attributes that the 
+user might pass where you don't actually know/care what they are when you declare the class. Its good practice to put 
+it in there, even if you don't understand it fully.
+
+And then to describe our car, we can create this:
+
+```python
 # Declare the class with a name
 class Car(object):        # Declare a 'class' named 'Car' that is an 'object'
     
@@ -43,3 +93,4 @@ class Car(object):        # Declare a 'class' named 'Car' that is an 'object'
             self.__setattr__(k, kwargs[k])       # say if we needed ' condition="good" ' to describe the car as well.
     
 ```
+

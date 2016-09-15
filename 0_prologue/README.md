@@ -19,8 +19,7 @@ the repository in a browser. If not, follow [this link][2] to a blog post I did 
  
  
 ## Python
-* We are going to be using Python 2.7 - *Note* you can use 3.5 but remember that you then have to wrap `print` arguments 
-with parenthesis. If these doesn't make sense to you, then don't worry about it yet.
+* We are going to be using Python 3.5. If these doesn't make sense to you, then don't worry about it yet.
 * If you are running a Mac or Linux machine, there is a 99% chance that Python is already installed on your computer, 
 because the language is included in the factory default packages - So woohoo! no work for you. If you are unsure, you 
 can run the code `which python` in a Command Line terminal, and if it prints out a location - usually `/usr/bin/python` 
