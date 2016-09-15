@@ -72,6 +72,8 @@ To turn a current variable into its string representation, wrap the variable in 
 like `str(5)` it will return `"5"`. If you want to print a string and number together, you must wrap the number in the 
 `str()` function.
 
+Go into `greeting.py` and follow the directions about assigning variables and printing them out.
+
 
 #### Boolean Expressions and Logic Operators
 A Boolean value is either True or False. It is named after the British mathematician, George Boole, who first 
