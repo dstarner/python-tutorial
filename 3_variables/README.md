@@ -147,8 +147,8 @@ Floats usually represent decimal numbers, but they can also represent numbers in
 
 ```python
 # Float examples
-example1 = 6/8
-example2 = 7/3
+example1 = float(6/8)
+example2 = float(7/3)
 example3 = 2.323
 example4 = example1 / example3
 ```
@@ -199,7 +199,7 @@ list.append(5)
 print list  # Will print "[1, 10, 15, 5]"
 ```
 
-To add to an existing list, use `append(some_value)`
+To remove from an existing list, use `remove(some_value)`
 
 ```
 list = [1, 10, 15]
@@ -207,10 +207,25 @@ list.remove(10)
 print list  # Will print "[1, 15]"
 ```
 
+If you want the value returned back, use `pop(index)`
+```
+list = [1, 10, 15]
+my_num = list.pop(0)
+print myNum  # Will print "1"
+```
+
 * You can mess around and assign different variables in `variables.py` and see how they change!
 
 #### Dictionary
-Will be discussed at a later point
+Dictionaries are like arrays, but allow you to map a key to a value. With lists, you use integers are indices, with maps, you can use (just about) anything.
 
+```python
+my_dictionary = {"Dan": 19, None: "Nothing", 5: "My age.", "coolness": False}
 
+print my_dictionary["Dan"]  # Prints 19
+
+my_dictionary["new_key"] = "My New Value"
+
+print my_dictionary  # Prints '{"Dan": 19, None: "Nothing", 5: "My age.", "coolness": False, "new_key": "My New Value"}'
+```
 
