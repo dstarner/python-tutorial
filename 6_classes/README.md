@@ -16,7 +16,7 @@ Think of any object, for this we will use a car. We can identity as few or as ma
 * Brand       - "Jeep"
 * Make        - "Liberty"
 * Year        - 2006
-* Owner       - "Daniel Starner"
+* Owner       - "Daniel S"
 * # of Wheels - 4  --> You'll see why this is used.
 
 We COULD represent all those values as different variables, but that would get very hard to follow once you 
@@ -92,5 +92,55 @@ class Car(object):        # Declare a 'class' named 'Car' that is an 'object'
         for k in kwargs.keys():                  # If any other values with keywords are passed, they will be added, 
             self.__setattr__(k, kwargs[k])       # say if we needed ' condition="good" ' to describe the car as well.
     
+```
+
+With this constructor, you can create a Car object and include your most important variables associated with it, while 
+still being able to associate any other variables as well. So how would you use this class in your code? An example file
+ is shown below, with everything shown.
+ 
+```python
+
+# Declare the class with a name
+class Car(object):        # Declare a 'class' named 'Car' that is an 'object'
+    
+    num_of_wheels = "4"   # The number of wheels the car has. All cars have 4 wheels, so this is 
+                          # outside of the '__init__()' function because this value never changes.
+                           
+    def __init__(self, brand, make, year, owner, **kwargs):  # This function is called when you create an object of 
+        self.brand = brand                                   # type 'Car'. This creates all your 'descriptions'.
+        self.make = make
+        self.year = year                         # The four lines right here assign the values passed to the function
+        self.owner = owner                       # to the attributes of the object so we can get/set them later.
+        
+        for k in kwargs.keys():                  # If any other values with keywords are passed, they will be added, 
+            self.__setattr__(k, kwargs[k])       # say if we needed ' condition="good" ' to describe the car as well.
+            
+
+"""
+Main running code below this comment
+"""
+
+def create_car():
+    """
+    This will call a bunch of inputs and return a new Car object
+    """
+    brand = input("What is the brand of your Car?")
+    make = input("What is the make of your Car?")
+    year = input("What is the year of your Car?")
+    owner = input("What is your name?")
+    return Car(brand, make, year, owner)  # This will create a Car object based on what we have above
+
+my_first_car = create_car()  # Create one car using the function above
+
+my_second_car = create_car() # Create another car using the function above (change the input values)
+
+print(my_first_car.brand)  # Prints out whatever brand equalled above.
+print(my_second_car.brand)  # Prints out whatever brand equalled above.
+
+if int(my_first_car.year) < int(my_second_car.year):
+    print("My second car is newer!")
+else:
+    print("My old car was newer")
+
 ```
 

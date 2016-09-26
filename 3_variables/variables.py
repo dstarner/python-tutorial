@@ -3,17 +3,17 @@ This program will help you to better understand variables, how to create them, a
 """
 
 # Set this to a number
-myNumber =
+myNumber = 5
 
 # Set this to a String, don't
 # forget to wrap it in ""s
-myString =
+myString = "Hi my name is Dan."
 
 # Set this to a Boolean
-myBoolean =
+myBoolean = False
 
 # Set this to a List; the items in it can be of any type
-myList =
+myList = 
 
 # Set this to a boolean expression - Remember your operators! (>, <, <=, >=, ==, !=)
 myBooleanExpression =
